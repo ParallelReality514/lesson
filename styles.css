@@ -1,0 +1,135 @@
+@keyframes runePulse {
+    0% {
+        text-shadow:
+            0 0 6px #ff9f1a,
+            0 0 14px #ff6f00,
+            0 0 28px rgba(255, 120, 0, 0.6);
+    }
+    50% {
+        text-shadow:
+            0 0 10px #ffd37d,
+            0 0 20px #ff9f1a,
+            0 0 40px rgba(255, 180, 0, 0.8);
+    }
+    100% {
+        text-shadow:
+            0 0 6px #ff9f1a,
+            0 0 14px #ff6f00,
+            0 0 28px rgba(255, 120, 0, 0.6);
+    }
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    width: 100vw; 
+    height: 100vh;
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.sign-area-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.fixed-canvas {
+    position: relative;
+    width: 1521px; 
+    height: 730px;
+    
+    transform-origin: 0 0;
+    transform: scale(min(calc(100vw / 1521), calc(100vh / 730)));
+}
+
+.background-image {
+    display: block;
+    width: 1521px; 
+    height: 730px; 
+    object-fit: contain; 
+    object-position: center; 
+}
+
+.runic-pointer {
+    position: absolute;
+    display: inline-block; 
+
+    font-size: 24px; 
+    
+    font-weight: 900;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    color: #ffeaa7;
+    text-shadow:
+        0 0 6px #ff9f1a,
+        0 0 12px #ff6f00,
+        0 0 30px rgba(255, 120, 0, 0.6),
+        0 0 50px rgba(255, 200, 0, 0.4);
+
+    animation: runePulse 3s infinite ease-in-out;
+    transition: all 0.35s ease-in-out;
+    
+    transform: translate(-50%, -50%) rotate(var(--rotate-angle));
+}
+
+.runic-pointer:hover {
+    color: rgb(255, 255, 255);
+
+    text-shadow:
+        0 0 12px #fff,
+        0 0 25px #ffd700,
+        0 0 55px #ff9100,
+        0 0 90px rgba(255, 0, 0, 0.8),
+        0 0 130px rgba(255, 120, 0, 1);
+
+    transform: translate(-50%, -50%) rotate(var(--rotate-angle)) scale(1.15); 
+}
+
+.info-label {
+    top: 135px;
+    left: 630px;
+    --rotate-angle: 4deg; 
+}
+
+.cards-label {
+    top: 94px;
+    left: 840px;
+    --rotate-angle: -17deg; 
+}
+
+.presentation-label {
+    top: 220px;
+    left: 640px;
+    --rotate-angle: 2deg; 
+}
+
+.infographics-label {
+    top: 263px;
+    left: 875px;
+    --rotate-angle: -1deg; 
+}
+
+.video-label {
+    top: 308px;
+    left: 630px;
+    --rotate-angle: 1deg; 
+}
+
+.audio-label {
+    top: 180px;
+    left: 855px;
+    --rotate-angle: 0deg; 
+}
+
+.test-label {
+    top: 368px;
+    left: 840px;
+    --rotate-angle: 2deg; 
+}
